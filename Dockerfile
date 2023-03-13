@@ -20,5 +20,12 @@ RUN npm --version \
 ENV CYPRESS_CACHE_FOLDER="/cypress_cache" 
 # The cache folder has to be accessible by all because repository code will be loaded as volume
 RUN mkdir -m 777 $CYPRESS_CACHE_FOLDER
+RUN useradd -ms /bin/bash tester && \
+    mkdir -p /e2e && \
+    chown -R tester:tester /e2e
+
+USER tester
+
+WORKDIR /e2e
 
 ENTRYPOINT [""]
