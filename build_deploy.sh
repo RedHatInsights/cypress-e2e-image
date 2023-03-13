@@ -5,7 +5,7 @@
 # --------------------------------------------
 export WORKSPACE=${WORKSPACE:-$APP_ROOT} # if running in jenkins, use the build's workspace
 export APP_ROOT=$(pwd)
-export IMAGE="quay.io/cloudservices/cypresse2e"
+export IMAGE="quay.io/cloudservices/cypress-e2e-image"
 export IMAGE_TAG=$(git rev-parse --short=7 HEAD)
 
 set -exv
