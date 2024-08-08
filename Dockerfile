@@ -3,7 +3,7 @@ FROM quay.io/fedora/fedora:37
 # We goota run as root because npm will install some binaries requried to run the cypress env
 USER root
 # install browser dependencies
-RUN dnf install -y xorg-x11-server-Xvfb gtk2-devel gtk3-devel git libnotify-devel GConf2 nss libXScrnSaver alsa-lib nodejs which
+RUN dnf install -y xorg-x11-server-Xvfb gtk2-devel gtk3-devel git libnotify-devel GConf2 nss libXScrnSaver alsa-lib nodejs which podman
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
 # install yarn and verify node version
