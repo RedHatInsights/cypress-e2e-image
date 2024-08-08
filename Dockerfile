@@ -5,9 +5,6 @@ USER root
 # install browser dependencies
 RUN dnf install -y xorg-x11-server-Xvfb gtk2-devel gtk3-devel git libnotify-devel GConf2 nss libXScrnSaver alsa-lib nodejs which podman
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-# error running podman in rhel - see https://access.redhat.com/solutions/7006710
-RUN setcap cap_setuid+ep /usr/bin/newuidmap
-RUN setcap cap_setgid+ep /usr/bin/newgidmap
 
 # install yarn and verify node version
 RUN npm --version \
