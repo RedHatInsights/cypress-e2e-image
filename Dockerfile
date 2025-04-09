@@ -1,4 +1,4 @@
-FROM quay.io/fedora/fedora:42
+FROM quay.io/fedora/fedora:43
 # FROM cypress/included:10.11.0
 # We goota run as root because npm will install some binaries requried to run the cypress env
 USER root
